@@ -2,7 +2,7 @@ export type Tenant = {
   name: string;
   description: string;
   logo: string;
-  color: string;
+  colors: string;
 };
 
 export const tenants = {
@@ -10,13 +10,31 @@ export const tenants = {
     name: "Default",
     description: "Default tenant",
     logo: "/next.svg",
-    color: "#000000",
+    colors: {
+      primary: {
+        light: "gray-400",
+        dark: "gray-400",
+      },
+      secoundary: {
+        light: "gray-400",
+        dark: "gray-400",
+      },
+    },
   },
   dacti: {
     name: "Dacti",
     description: "Dacti tenant",
     logo: "/file.svg",
-    color: "#000000",
+    colors: {
+      primary: {
+        light: "gray-400",
+        dark: "gray-400",
+      },
+      secoundary: {
+        light: "gray-400",
+        dark: "gray-400",
+      },
+    },
   },
 };
 
