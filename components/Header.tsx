@@ -3,6 +3,7 @@
 import { app } from "@/lib/app";
 import { getTenantConfig } from "@/lib/tenants";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Header() {
   const tenant = getTenantConfig(app.currentTenant);
@@ -22,19 +23,20 @@ export default function Header() {
       <nav>
         <ul className="flex space-x-4">
           <li>
-            <a href="#" className="hover:text-gray-400">
-              Home
-            </a>
+            <Link
+              href="/"
+              className={`hover:text-${tenant.colors.primary.light}`}
+            >
+              Início
+            </Link>
           </li>
           <li>
-            <a href="#" className="hover:text-gray-400">
-              About
-            </a>
-          </li>
-          <li>
-            <a href="#" className="hover:text-gray-400">
-              Contact
-            </a>
+            <Link
+              href="/finalizadas"
+              className={`hover:text-${tenant.colors.primary.light}`}
+            >
+              Tarefas finalizadas
+            </Link>
           </li>
         </ul>
       </nav>
