@@ -19,6 +19,10 @@ export const tenants = {
         light: "gray-400",
         dark: "gray-400",
       },
+      background: {
+        light: "white",
+        dark: "gray-900",
+      },
     },
   },
   dacti: {
@@ -34,10 +38,10 @@ export const tenants = {
         light: "gray-400",
         dark: "gray-400",
       },
+      background: {
+        light: "white",
+        dark: "gray-900",
+      },
     },
   },
 };
-
-export function getTenantConfig(tenant: keyof typeof tenants) {
-  return tenants[tenant] || tenants.default;
-}
