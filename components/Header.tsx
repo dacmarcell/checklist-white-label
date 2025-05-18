@@ -1,18 +1,15 @@
 "use client";
 
-import { app } from "@/lib/app";
-import { getTenantConfig } from "@/lib/tenants";
+import { tenantConfig } from "@/lib/app";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Header() {
-  const tenant = getTenantConfig(app.currentTenant);
-
   return (
     <>
       <div className="flex items-center">
         <Image
-          src={tenant.logo}
+          src={tenantConfig.logo}
           alt="Logo"
           className="h-8 w-8 mr-2"
           width={8}
@@ -25,7 +22,7 @@ export default function Header() {
           <li>
             <Link
               href="/"
-              className={`hover:text-${tenant.colors.primary.light}`}
+              className={`hover:text-${tenantConfig.colors.primary.light}`}
             >
               Início
             </Link>
@@ -33,7 +30,7 @@ export default function Header() {
           <li>
             <Link
               href="/finalizadas"
-              className={`hover:text-${tenant.colors.primary.light}`}
+              className={`hover:text-${tenantConfig.colors.primary.light}`}
             >
               Tarefas finalizadas
             </Link>
