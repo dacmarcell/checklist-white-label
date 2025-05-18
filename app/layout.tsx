@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
+import { tenantConfig } from "@/lib/app";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,7 +25,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <>
+    <div
+      className={`min-h-screen bg-${tenantConfig.colors.background.light} dark:bg-${tenantConfig.colors.background.dark}`}
+    >
       <header className="flex items-center justify-between p-4 bg-gray-800 text-white">
         <Header />
       </header>
@@ -35,6 +38,6 @@ export default function RootLayout({
           {children}
         </body>
       </html>
-    </>
+    </div>
   );
 }
