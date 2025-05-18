@@ -1,4 +1,4 @@
-export const fetchTasks = async () => {
+export const fetchFinishedTasks = async () => {
   const response = await fetch("/api/tasks/finished");
   const data = await response.json();
 
