@@ -1,13 +1,13 @@
 "use client";
 
-import { fetchTasks } from "@/lib/tasks";
+import { fetchFinishedTasks, Task } from "@/lib/tasks";
 import { useEffect, useState } from "react";
 
 export default function Finalizadas() {
-  const [tasks, setTasks] = useState<{ name: string }[]>([]);
+  const [tasks, setTasks] = useState<Task[]>([]);
 
   useEffect(() => {
-    fetchTasks().then(setTasks);
+    fetchFinishedTasks().then(setTasks);
   }, []);
 
   return (
