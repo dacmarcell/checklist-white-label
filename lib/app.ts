@@ -7,3 +7,5 @@ type App = {
 export const app: App = {
   currentTenant: "default",
 };
+
+export const tenantConfig = tenants[app.currentTenant];
